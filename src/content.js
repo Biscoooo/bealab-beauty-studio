@@ -10,7 +10,12 @@ export const studio = {
   maps: 'https://www.google.com/maps/search/?api=1&query=Bealab+Beauty+Studio+Torino',
   // Inserire un URL della scheda Google ufficiale solo dopo averla verificata.
   googleReviewsUrl: null,
-  hours: [], // Esempio di formato: { day: 'Lunedì', time: '…' }. Confermare prima di compilare.
+  hours: [
+    { day: 'Martedì e mercoledì', time: '9:30 – 19:00' },
+    { day: 'Giovedì e venerdì', time: '8:30 – 19:30' },
+    { day: 'Sabato', time: '9:30 – 13:30' },
+    { day: 'Domenica e lunedì', time: 'Chiuso' },
+  ],
   socials: [], // { label: 'Instagram', url: 'URL verificato' }
   legal: { owner: '', vatNumber: '', contact: '', providers: '' },
   reviews: [], // Solo recensioni autentiche autorizzate: { text, author, sourceUrl }.
