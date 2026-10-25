@@ -13,10 +13,13 @@ export const studio = {
   // Inserire un URL della scheda Google ufficiale solo dopo averla verificata.
   googleReviewsUrl: null,
   hours: [
-    { day: 'Martedì e mercoledì', time: '9:30 – 19:00' },
-    { day: 'Giovedì e venerdì', time: '8:30 – 19:30' },
+    { day: 'Lunedì', time: 'Chiuso' },
+    { day: 'Martedì', time: '9:30 – 19:00' },
+    { day: 'Mercoledì', time: '9:30 – 19:00' },
+    { day: 'Giovedì', time: '8:30 – 19:30' },
+    { day: 'Venerdì', time: '8:30 – 19:30' },
     { day: 'Sabato', time: '9:30 – 13:30' },
-    { day: 'Domenica e lunedì', time: 'Chiuso' },
+    { day: 'Domenica', time: 'Chiuso' },
   ],
   socials: [], // { label: 'Instagram', url: 'URL verificato' }
   legal: { owner: '', vatNumber: '', contact: '', providers: '' },
