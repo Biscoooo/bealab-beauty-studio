@@ -2,6 +2,20 @@
 
 Sito vetrina dimostrativo in italiano, sviluppato con Vite e JavaScript. Non richiede database, account o chiavi API. Contiene nove sezioni, menu mobile, galleria con lightbox e navigazione da tastiera, dettagli dei trattamenti, collegamenti WhatsApp e telefono, mappa caricata su richiesta e spazio privacy.
 
+## Un link fisso con aggiornamenti automatici
+
+È predisposta la pubblicazione tramite GitHub Pages. Il proprietario deve attivarla una sola volta:
+
+1. Aprire **Settings → Pages** nel repository GitHub.
+2. In **Build and deployment → Source**, scegliere **GitHub Actions**.
+3. Aprire **Actions → Pubblica demo Bealab**, premere **Run workflow**, scegliere `main` e confermare. Se un’esecuzione è già fallita prima dell’attivazione di Pages, usare **Re-run all jobs** oppure avviare una nuova esecuzione.
+
+Dopo la prima pubblicazione riuscita, GitHub mostra il collegamento nelle impostazioni Pages. L’indirizzo previsto, senza dominio personalizzato, è `https://biscoooo.github.io/bealab-beauty-studio/`. Ogni successivo push su `main` ricompila e pubblica automaticamente il sito: non occorre riscaricare lo ZIP, basta riaprire o aggiornare lo stesso link dopo il completamento dell’azione. Un’eventuale esecuzione fallita va risolta dalla scheda Actions.
+
+La build legge il percorso da GitHub Pages per servire correttamente immagini, font e script anche nella sottocartella del progetto. Questa pubblicazione è una demo pubblicamente accessibile; resta esclusa dall’indicizzazione con `noindex,nofollow`, senza attivare `SITE_URL`. I dati legali e le informazioni commerciali ancora da verificare vanno completati prima di usarla come sito definitivo.
+
+Se GitHub richiede un piano a pagamento per Pages nel repository privato, verificare le opzioni dell’account: non cambiare automaticamente la visibilità del repository. La configurazione del workflow non prova che Pages sia già attivo o che la prima pubblicazione sia riuscita.
+
 ## Vedere il sito senza installare nulla
 
 1. Su GitHub premi il pulsante verde **Code**, poi **Download ZIP**.

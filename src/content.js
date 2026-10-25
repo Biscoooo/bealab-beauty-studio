@@ -1,4 +1,6 @@
 // Tutti i dati commerciali da aggiornare prima della pubblicazione sono qui.
+export const assetUrl = path => path.startsWith('data:') ? path : import.meta.env.BASE_URL + path.replace(/^\/+/, '');
+
 export const studio = {
   name: 'Bealab – Beauty Studio',
   phone: '+39 351 112 8616',
@@ -27,7 +29,7 @@ export const treatments = [
   { id: 'sguardo', number: '03', name: 'Ciglia & sguardo', short: 'La bellezza, al primo sguardo.', description: 'Un’attenzione speciale ai dettagli che rendono il tuo sguardo unico.', services: ['Trattamenti per valorizzare lo sguardo', 'Laminazione ciglia'], image: '/images/eyes.webp', alt: 'Dettaglio dimostrativo di occhi chiusi e ciglia naturali', position: 'center' },
   { id: 'depilazione', number: '04', name: 'Depilazione', short: 'La leggerezza sulla pelle.', description: 'Cura e delicatezza per sentirti a tuo agio, ogni giorno.', services: ['Ceretta', 'Trattamenti di epilazione'], image: '/images/wellness.webp', alt: 'Accessori dimostrativi dedicati alla cura della pelle', position: 'center' },
   { id: 'corpo', number: '05', name: 'Corpo & benessere', short: 'Rallenta. Respira. Ritrovati.', description: 'Lascia spazio al relax con un momento dedicato al tuo corpo e al tuo benessere.', services: ['Trattamenti estetici per il corpo', 'Percorsi dedicati al benessere'], image: '/images/studio.webp', alt: 'Ambiente dimostrativo per un momento di relax e benessere', position: 'center' },
-];
+].map(treatment => ({ ...treatment, image: assetUrl(treatment.image) }));
 
 export const values = [
   { icon: 'sparkles', title: 'Cura dei dettagli', text: 'L’attenzione che fa la differenza, in ogni piccolo gesto.' },
@@ -42,4 +44,4 @@ export const gallery = [
   { src: '/images/hero.webp', alt: 'Ispirazione per un rituale viso', label: 'Un gesto di cura' },
   { src: '/images/eyes.webp', alt: 'Ispirazione dedicata alla cura dello sguardo', label: 'La tua luce naturale', className: 'gallery-wide' },
   { src: '/images/wellness.webp', alt: 'Ispirazione dedicata al benessere', label: 'Il tempo di ritrovarti' },
-];
+].map(image => ({ ...image, src: assetUrl(image.src) }));

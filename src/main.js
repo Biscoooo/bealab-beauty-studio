@@ -4,7 +4,7 @@ import '@fontsource/cormorant-garamond/latin-500.css';
 import '@fontsource/dm-sans/latin-400.css';
 import '@fontsource/dm-sans/latin-500.css';
 import { createIcons, ArrowUpRight, ArrowRight, ArrowLeft, ArrowDown, Menu, X, Phone, MapPin, Clock3, Plus, Sparkles, Flower2, HeartHandshake, Fingerprint, ExternalLink, ChevronLeft, ChevronRight } from 'lucide';
-import { studio, treatments, values, gallery } from './content.js';
+import { studio, treatments, values, gallery, assetUrl } from './content.js';
 import './style.css';
 
 const esc = (text) => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -40,7 +40,7 @@ document.querySelector('#app').innerHTML = `
         <a class="hero-scroll" href="#filosofia"><span class="circle-arrow">${icon('arrow-down')}</span> PRENDITI IL TUO TEMPO</a>
       </div>
       <div class="hero-visual">
-        <img class="hero-photo" src="/images/hero.webp" width="1536" height="1024" alt="Immagine illustrativa: un momento di relax durante un trattamento viso" fetchpriority="high">
+        <img class="hero-photo" src="${assetUrl('/images/hero.webp')}" width="1536" height="1024" alt="Immagine illustrativa: un momento di relax durante un trattamento viso" fetchpriority="high">
         <div class="hero-image-shade"></div>
         <div class="hero-image-note"><span>BEAUTY IS A FEELING.</span><p>Il tuo tempo.<br>La tua bellezza.</p><span class="image-demo-label">IMMAGINE DIMOSTRATIVA</span></div>
         <div class="round-seal"><span>UN MOMENTO</span>${icon('flower-2')}<span>SOLO PER TE</span></div>
@@ -50,7 +50,7 @@ document.querySelector('#app').innerHTML = `
     <div class="manifesto-strip"><span>La cura comincia da te.</span><span class="strip-flower">✳</span><span>La bellezza, dal sentirti bene.</span><span class="strip-flower">✳</span><span>Benvenuta da Bealab.</span></div>
 
     <section class="about section-pad" id="filosofia" aria-labelledby="about-title">
-      <div class="about-visual reveal"><img src="/images/studio.webp" alt="Immagine dimostrativa di un ambiente beauty dai toni caldi e naturali" loading="lazy" width="1024" height="1280"><span class="vertical-caption">UN’ISPIRAZIONE PER IL NOSTRO MONDO · IMMAGINE DEMO</span><div class="about-image-note">Un respiro.<br><em>Un nuovo equilibrio.</em></div></div>
+      <div class="about-visual reveal"><img src="${assetUrl('/images/studio.webp')}" alt="Immagine dimostrativa di un ambiente beauty dai toni caldi e naturali" loading="lazy" width="1024" height="1280"><span class="vertical-caption">UN’ISPIRAZIONE PER IL NOSTRO MONDO · IMMAGINE DEMO</span><div class="about-image-note">Un respiro.<br><em>Un nuovo equilibrio.</em></div></div>
       <div class="about-copy reveal"><span class="eyebrow">01 / IL MONDO BEALAB</span><h2 id="about-title">Il tuo momento<br>di bellezza,<br><em>il nostro impegno.</em></h2><p>Ci sono momenti in cui tutto quello di cui hai bisogno è fermarti. Lasciare fuori la fretta e dedicare un po’ di attenzione a te.</p><p>Bealab è uno spazio dedicato alla cura personale: un invito a riscoprire il piacere dei piccoli gesti, in un’atmosfera accogliente. Ascoltiamo i tuoi desideri per accompagnarti verso una bellezza che ti somiglia.</p><a class="text-link" href="#valori">La nostra idea di bellezza ${icon('arrow-up-right')}</a><div class="about-signature">Con cura, Bealab.</div></div>
     </section>
 
