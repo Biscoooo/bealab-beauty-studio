@@ -23,7 +23,27 @@ export const studio = {
   ],
   socials: [], // { label: 'Instagram', url: 'URL verificato' }
   legal: { owner: '', vatNumber: '', contact: '', providers: '' },
-  reviews: [], // Solo recensioni autentiche autorizzate: { text, author, sourceUrl }.
+  // Trascritte dagli screenshot Google Maps forniti dall’utente. Cognomi abbreviati su sua richiesta.
+  reviews: [
+    {
+      author: 'Elena F.',
+      rating: 5,
+      text: 'Un centro che consiglio davvero! Ho fatto diversi trattamenti e sono sempre rimasta molto soddisfatta. Le quattro ragazze sono bravissime, gentili e sempre disponibili. Ti fanno sentire a tuo agio dal primo momento e lavorano con grande professionalità. Entrare qui è sempre una piacevole coccola ✨',
+      sourceUrl: null,
+    },
+    {
+      author: 'Jessica P.',
+      rating: 5,
+      text: 'Andare da Bealab è una coccola, tutto lo staff è super gentile ma trovare Ilenia ad accogliermi è sempre un piacere. Non potrei affidarmi a nessun altro per i trattamenti corpo che faccio. Assolutamente consigliato come centro.',
+      sourceUrl: null,
+    },
+    {
+      author: 'Laura D.',
+      rating: 5,
+      text: 'Ormai una garanzia da anni, mi affido a loro per trattamenti corpo, laser e unghie e mi trovo davvero bene. Professionali, preparate e cordiali, un piccolo angolo di paradiso.',
+      sourceUrl: null,
+    },
+  ],
 };
 
 export const treatments = [
