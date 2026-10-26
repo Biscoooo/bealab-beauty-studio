@@ -3,6 +3,7 @@ export const assetUrl = path => path.startsWith('data:') ? path : import.meta.en
 
 export const studio = {
   name: 'Bealab – Beauty Studio',
+  openingYear: 2022,
   phone: '+39 351 112 8616',
   phoneHref: 'tel:+393511128616',
   whatsapp: 'https://wa.me/393511128616',
@@ -46,6 +47,13 @@ export const studio = {
   ],
 };
 
+export const team = [
+  { name: 'Giulia', role: 'Titolare', image: '/images/team-giulia.webp', alt: 'Giulia, titolare di Bealab' },
+  { name: 'Alessia', role: 'Il team Bealab', image: '/images/team-alessia.webp', alt: 'Alessia, della squadra Bealab' },
+  { name: 'Ilenia', role: 'Il team Bealab', image: '/images/team-ilenia.webp', alt: 'Ilenia, della squadra Bealab' },
+  { name: 'Marika', role: 'Il team Bealab', image: '/images/team-marika.webp', alt: 'Marika, della squadra Bealab' },
+].map(person => ({ ...person, image: assetUrl(person.image) }));
+
 export const treatments = [
   { id: 'mani', number: '01', name: 'Manicure & nail care', short: 'Piccoli dettagli, grande bellezza.', description: 'Un momento dedicato alle tue mani e ai tuoi piedi, con la cura che meritano.', services: ['Manicure', 'Semipermanente', 'Pedicure', 'Ricostruzione unghie'], image: '/images/nails.webp', alt: 'Dettaglio dimostrativo di una manicure nei toni nude', position: 'center' },
   { id: 'viso', number: '02', name: 'Trattamenti viso', short: 'Ritrova la tua luce naturale.', description: 'Ascoltare la tua pelle e dedicarti un rituale di bellezza pensato intorno a te.', services: ['Pulizia del viso', 'Trattamenti personalizzati per la pelle', 'Cura e benessere del viso'], image: '/images/hero.webp', alt: 'Immagine dimostrativa di un rituale di cura del viso', position: '65% center' },
@@ -55,10 +63,10 @@ export const treatments = [
 ].map(treatment => ({ ...treatment, image: assetUrl(treatment.image) }));
 
 export const values = [
-  { icon: 'sparkles', title: 'Cura dei dettagli', text: 'L’attenzione che fa la differenza, in ogni piccolo gesto.' },
-  { icon: 'flower-2', title: 'Professionalità', text: 'Ascolto e cura, al centro di ogni tuo desiderio.' },
-  { icon: 'heart-handshake', title: 'Accoglienza', text: 'Un’atmosfera serena in cui sentirti semplicemente bene.' },
-  { icon: 'fingerprint', title: 'Bellezza personalizzata', text: 'Il tuo modo di essere, il nostro punto di partenza.' },
+  { icon: 'sparkles', title: 'Cura dei dettagli', text: 'Nei piccoli gesti, tutta l’attenzione che ci piace dedicarti.' },
+  { icon: 'flower-2', title: 'Professionalità', text: 'Cura e serietà nel lavoro, spontaneità nel modo di accoglierti.' },
+  { icon: 'heart-handshake', title: 'Accoglienza', text: 'Una chiacchiera, una risata e la libertà di essere te.' },
+  { icon: 'fingerprint', title: 'Bellezza personalizzata', text: 'Ti ascoltiamo per trovare insieme quello che fa per te.' },
 ];
 
 export const gallery = [

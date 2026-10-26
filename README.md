@@ -1,6 +1,6 @@
 # Bealab – Beauty Studio
 
-Sito vetrina dimostrativo in italiano, sviluppato con Vite e JavaScript. Non richiede database, account o chiavi API. Contiene nove sezioni, menu mobile, galleria con lightbox e navigazione da tastiera, dettagli dei trattamenti, collegamenti WhatsApp e telefono, mappa caricata su richiesta e spazio privacy.
+Sito vetrina dimostrativo in italiano, sviluppato con Vite e JavaScript. Non richiede database, account o chiavi API. Include una sezione dedicata alla squadra, menu mobile, galleria con lightbox e navigazione da tastiera, dettagli dei trattamenti, collegamenti WhatsApp e telefono, mappa caricata su richiesta e spazio privacy.
 
 ## Un link fisso con aggiornamenti automatici
 
@@ -47,10 +47,10 @@ La cartella `dist/` è distribuibile su hosting statico. Non contiene segreti. L
 
 ## Aggiornare il sito
 
-- `src/content.js`: contatti, orari, servizi, foto, social, recensioni autorizzate e informazioni legali. Gli orari vuoti mostrano un invito a contattare il centro; nessun orario è stato inventato.
+- `src/content.js`: contatti, anno di apertura, orari, squadra, servizi, foto, social, recensioni autorizzate e informazioni legali. Gli orari vuoti mostrano un invito a contattare il centro; nessun orario è stato inventato. L’anno 2022, i nomi Giulia, Alessia, Ilenia e Marika e il ruolo di Giulia come titolare provengono dal post ufficiale fornito dall’utente. Non sono attribuite specializzazioni o qualifiche non confermate alle altre persone.
 - `src/main.js`: testi editoriali, struttura e interazioni.
 - `src/style.css`: palette, tipografia, animazioni e responsive.
-- `public/images/`: fotografie WebP locali, sostituibili mantenendo gli stessi nomi. Le fotografie sono illustrazioni generate per la demo, non immagini del salone o prove di trattamenti effettivamente eseguiti. I file originali sono conservati fuori dal checkout in `/workspace/generated_images`.
+- `public/images/`: immagini WebP locali, sostituibili mantenendo gli stessi nomi. I ritratti `team-*.webp` sono adattamenti per il sito delle fotografie della squadra fornite dall’utente. Le altre fotografie sono illustrazioni generate per la demo, non immagini del salone o prove di trattamenti effettivamente eseguiti. Le risorse di lavoro sono conservate fuori dal checkout in `/workspace/generated_images`.
 - `public/images/logo-bealab.webp`: versione adattata per il sito dal logo fornito dall’utente, con sfondo trasparente. Il logo è distinto dalle fotografie dimostrative. La palette del sito riprende rosa peonia, lilla e fucsia dal post ufficiale condiviso dall’utente.
 - `index.html`: metadati SEO e Open Graph.
 
