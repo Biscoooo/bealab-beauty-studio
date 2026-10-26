@@ -50,7 +50,8 @@ La cartella `dist/` è distribuibile su hosting statico. Non contiene segreti. L
 - `src/content.js`: contatti, orari, servizi, foto, social, recensioni autorizzate e informazioni legali. Gli orari vuoti mostrano un invito a contattare il centro; nessun orario è stato inventato.
 - `src/main.js`: testi editoriali, struttura e interazioni.
 - `src/style.css`: palette, tipografia, animazioni e responsive.
-- `public/images/`: immagini WebP locali, sostituibili mantenendo gli stessi nomi. Sono tutte illustrazioni generate per la demo, non fotografie del salone o prove di trattamenti effettivamente eseguiti. I file originali sono conservati fuori dal checkout in `/workspace/generated_images`.
+- `public/images/`: fotografie WebP locali, sostituibili mantenendo gli stessi nomi. Le fotografie sono illustrazioni generate per la demo, non immagini del salone o prove di trattamenti effettivamente eseguiti. I file originali sono conservati fuori dal checkout in `/workspace/generated_images`.
+- `public/images/logo-bealab.webp`: versione adattata per il sito dal logo fornito dall’utente, con sfondo trasparente. Il logo è distinto dalle fotografie dimostrative. La palette del sito riprende rosa peonia, lilla e fucsia dal post ufficiale condiviso dall’utente.
 - `index.html`: metadati SEO e Open Graph.
 
 I font Cormorant Garamond e DM Sans sono serviti localmente tramite Fontsource. Le icone sono Lucide (ISC); i font includono le rispettive licenze SIL OFL nei pacchetti installati. Non sono presenti analytics o pixel pubblicitari.

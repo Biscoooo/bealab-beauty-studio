@@ -12,7 +12,7 @@ const safeUrl = (url) => { try { const u = new URL(url); return u.protocol === '
 const icon = (name, cls = '') => `<i data-lucide="${name}" class="${cls}" aria-hidden="true"></i>`;
 const waIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4.1Z"/><path d="M8.3 7.6c-.6 0-1.1.7-.9 1.5.5 2.8 2.8 5.1 5.6 5.8.9.2 1.9-.6 1.9-1.2l-2-1-1 .7a6.7 6.7 0 0 1-2.8-2.7l.6-1-1-2.1Z"/></svg>`;
 const external = 'target="_blank" rel="noopener noreferrer"';
-const mark = `<span class="brand-name">bealab<span class="brand-dot">.</span></span><span class="brand-sub">BEAUTY STUDIO · TORINO</span>`;
+const mark = `<img class="brand-logo" src="${assetUrl('/images/logo-bealab.webp')}" width="1784" height="870" alt="BEALAB BeautyStudio di Giulia Salis">`;
 
 document.querySelector('#app').innerHTML = `
   <a class="skip-link" href="#main">Vai al contenuto</a>
@@ -47,7 +47,7 @@ document.querySelector('#app').innerHTML = `
         <span class="hero-side-note">CURA. EQUILIBRIO. BELLEZZA.</span>
       </div>
     </section>
-    <div class="manifesto-strip"><span>La cura comincia da te.</span><span class="strip-flower">✳</span><span>La bellezza, dal sentirti bene.</span><span class="strip-flower">✳</span><span>Benvenuta da Bealab.</span></div>
+    <div class="manifesto-strip"><span>La cura comincia da te.</span><span class="strip-flower">${icon('flower-2')}</span><span>La bellezza, dal sentirti bene.</span><span class="strip-flower">${icon('flower-2')}</span><span>Benvenuta da Bealab.</span></div>
 
     <section class="about section-pad" id="filosofia" aria-labelledby="about-title">
       <div class="about-visual reveal"><img src="${assetUrl('/images/studio.webp')}" alt="Immagine dimostrativa di un ambiente beauty dai toni caldi e naturali" loading="lazy" width="1024" height="1280"><span class="vertical-caption">UN’ISPIRAZIONE PER IL NOSTRO MONDO · IMMAGINE DEMO</span><div class="about-image-note">Un respiro.<br><em>Un nuovo equilibrio.</em></div></div>
