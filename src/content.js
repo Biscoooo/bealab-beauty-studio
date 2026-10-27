@@ -68,11 +68,3 @@ export const values = [
   { icon: 'heart-handshake', title: 'Accoglienza', text: 'Una chiacchiera, una risata e la libertà di essere te.' },
   { icon: 'fingerprint', title: 'Bellezza personalizzata', text: 'Ti ascoltiamo per trovare insieme quello che fa per te.' },
 ];
-
-export const gallery = [
-  { src: '/images/studio.webp', alt: 'Ispirazione per un ambiente beauty accogliente', label: 'Uno spazio per rallentare', className: 'gallery-tall' },
-  { src: '/images/nails.webp', alt: 'Ispirazione manicure nude', label: 'La bellezza nei dettagli' },
-  { src: '/images/hero.webp', alt: 'Ispirazione per un rituale viso', label: 'Un gesto di cura' },
-  { src: '/images/eyes.webp', alt: 'Ispirazione dedicata alla cura dello sguardo', label: 'La tua luce naturale', className: 'gallery-wide' },
-  { src: '/images/wellness.webp', alt: 'Ispirazione dedicata al benessere', label: 'Il tempo di ritrovarti' },
-].map(image => ({ ...image, src: assetUrl(image.src) }));

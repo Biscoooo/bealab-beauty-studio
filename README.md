@@ -1,6 +1,6 @@
 # Bealab – Beauty Studio
 
-Sito vetrina dimostrativo in italiano, sviluppato con Vite e JavaScript. Non richiede database, account o chiavi API. Include una sezione dedicata alla squadra, menu mobile, galleria con lightbox e navigazione da tastiera, dettagli dei trattamenti, collegamenti WhatsApp e telefono, mappa caricata su richiesta e spazio privacy.
+Sito vetrina dimostrativo in italiano, sviluppato con Vite e JavaScript. Non richiede database, account o chiavi API. Include una sezione dedicata alla squadra, menu mobile, dettagli dei trattamenti, collegamenti WhatsApp e telefono, mappa caricata su richiesta e spazio privacy.
 
 ## Un link fisso con aggiornamenti automatici
 
@@ -74,4 +74,4 @@ Il comando produce `dist/sitemap.xml`, `robots.txt`, URL canonico e Open Graph a
 
 ## Verifiche
 
-La compilazione controlla il bundle. Il flusso è stato verificato con Chromium/Playwright su desktop e smartphone: menu, collegamenti interni, dettagli dei cinque trattamenti, WhatsApp senza testo precompilato, galleria e tastiera, privacy e caricamento differito della mappa. Le aperture dei servizi esterni non costituiscono una verifica delle loro funzionalità o della scheda Google ufficiale.
+La compilazione controlla il bundle. Il flusso è stato verificato con Chromium/Playwright su desktop e smartphone: menu, collegamenti interni, dettagli dei cinque trattamenti, WhatsApp senza testo precompilato, chiusura delle finestre con il tasto Escape, privacy e caricamento differito della mappa. Le aperture dei servizi esterni non costituiscono una verifica delle loro funzionalità o della scheda Google ufficiale.
