@@ -6,6 +6,7 @@ import '@fontsource/dm-sans/latin-500.css';
 import { createIcons, ArrowUpRight, ArrowRight, ArrowLeft, ArrowDown, Menu, X, Phone, MapPin, Clock3, Plus, Sparkles, Flower2, HeartHandshake, Fingerprint, ExternalLink } from 'lucide';
 import { studio, treatments, values, team, assetUrl } from './content.js';
 import './style.css';
+import { initMotion, animateDialog } from './motion.js';
 
 const esc = (text) => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeUrl = (url) => { try { const u = new URL(url); return u.protocol === 'https:' ? esc(u.href) : '#'; } catch { return '#'; } };
@@ -16,13 +17,14 @@ const mark = `<img class="brand-logo" src="${assetUrl('/images/logo-bealab.webp'
 
 document.querySelector('#app').innerHTML = `
   <a class="skip-link" href="#main">Vai al contenuto</a>
+  <div class="reading-progress" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Bealab, inizio pagina">${mark}</a>
     <nav class="desktop-nav" aria-label="Navigazione principale">
       <a href="#filosofia">Il nostro mondo</a><a href="#squadra">La squadra</a><a href="#trattamenti">Trattamenti</a><a href="#contatti">Dove siamo</a>
     </nav>
     <a class="button button-dark header-book" href="${studio.whatsapp}" ${external}>Prenota un momento per te ${icon('arrow-up-right')}</a>
-    <button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Apri menu">${icon('menu')}</button>
+    <button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Apri menu">${icon('menu', 'menu-open-icon')}${icon('x', 'menu-close-icon')}</button>
   </header>
   <nav id="mobile-nav" class="mobile-nav" aria-label="Navigazione mobile" inert>
     <span class="eyebrow">IL MONDO BEALAB</span>
@@ -40,7 +42,7 @@ document.querySelector('#app').innerHTML = `
         <a class="hero-scroll" href="#filosofia"><span class="circle-arrow">${icon('arrow-down')}</span> PRENDITI IL TUO TEMPO</a>
       </div>
       <div class="hero-visual">
-        <img class="hero-photo" src="${assetUrl('/images/hero.webp')}" width="1536" height="1024" alt="Immagine illustrativa: un momento di relax durante un trattamento viso" fetchpriority="high">
+        <div class="hero-image-frame"><img class="hero-photo" src="${assetUrl('/images/hero.webp')}" width="1536" height="1024" alt="Immagine illustrativa: un momento di relax durante un trattamento viso" fetchpriority="high"></div>
         <div class="hero-image-shade"></div>
         <div class="hero-image-note"><span>BEAUTY IS A FEELING.</span><p>Entra, rilassati.<br>Sei da Bealab.</p><span class="image-demo-label">IMMAGINE DIMOSTRATIVA</span></div>
         <div class="round-seal"><span>UN MOMENTO</span>${icon('flower-2')}<span>SOLO PER TE</span></div>
@@ -98,7 +100,7 @@ matchMedia('(min-width: 1001px)').addEventListener('change',e=>{if(e.matches)clo
 
 const contentDialog = document.querySelector('#content-dialog');
 const content = document.querySelector('#dialog-content');
-function openContent(html) { content.innerHTML=html; drawIcons(); contentDialog.showModal(); document.body.classList.add('dialog-open'); }
+function openContent(html) { content.innerHTML=html; drawIcons(); contentDialog.showModal(); document.body.classList.add('dialog-open'); animateDialog(contentDialog); }
 document.querySelectorAll('[data-treatment]').forEach(button=>button.addEventListener('click',()=>{const t=treatments.find(t=>t.id===button.dataset.treatment); openContent(`<img class="dialog-treatment-image" src="${t.image}" alt="${esc(t.alt)}"><div class="dialog-body"><span class="eyebrow">IL TUO RITUALE BEALAB · ${t.number}</span><h2 id="dialog-title">${t.name}</h2><p>${t.description}</p><ul class="service-list">${t.services.map(s=>`<li>${s}${icon('sparkles')}</li>`).join('')}</ul><p class="dialog-note">Selezione dimostrativa: servizi, disponibilità e modalità da confermare direttamente con il centro. Nessun prezzo è stato ipotizzato.</p><a class="button button-dark" href="${studio.whatsapp}" ${external}>Richiedi informazioni ${waIcon}</a></div>`);}));
 document.querySelectorAll('[data-privacy]').forEach(button=>button.addEventListener('click',()=>openContent(`<div class="dialog-body privacy-body"><span class="eyebrow">TRASPARENZA E PRIVACY</span><h2 id="dialog-title">La tua privacy,<br><em>con cura.</em></h2><p class="privacy-status">Documento preliminare per la demo, da completare prima della pubblicazione. Non costituisce un’informativa definitiva.</p><h3>Come funziona questa demo</h3><p>Il sito non contiene moduli per raccogliere dati personali, non utilizza strumenti di analisi, pubblicità o cookie di profilazione. Font e immagini vengono serviti dal sito. Il gestore dell’hosting può trattare dati tecnici di connessione secondo le proprie condizioni.</p><h3>Servizi esterni</h3><p>I collegamenti a WhatsApp e Google aprono i rispettivi servizi solo quando scegli di visitarli. La mappa Google non è caricata automaticamente: il pulsante dedicato attiva la connessione a Google, che può trattare indirizzo IP e altri dati tecnici secondo la propria <a href="https://policies.google.com/privacy?hl=it" ${external}>informativa privacy</a>. Consultare anche l’<a href="https://www.whatsapp.com/legal/privacy-policy?lang=it" ${external}>informativa WhatsApp</a>.</p><h3>Informazioni del titolare</h3><dl class="legal-fields"><dt>Titolare e recapito privacy</dt><dd>${esc(studio.legal.owner || 'Da inserire dal titolare prima della pubblicazione')}${studio.legal.contact ? ' · '+esc(studio.legal.contact) : ''}</dd><dt>Partita IVA</dt><dd>${esc(studio.legal.vatNumber || 'Da verificare e inserire prima della pubblicazione')}</dd><dt>Fornitori del servizio</dt><dd>${esc(studio.legal.providers || 'Hosting e relativi fornitori da confermare')}</dd></dl><h3>Da completare prima della pubblicazione</h3><p>Il titolare dovrà verificare finalità e basi giuridiche dei trattamenti effettivi, tempi di conservazione, destinatari, eventuali trasferimenti e modalità per esercitare i diritti previsti dal GDPR e presentare reclamo al Garante. La configurazione della mappa e ogni futuro servizio esterno vanno verificati rispetto ai requisiti applicabili.</p></div>`)));
 
@@ -108,6 +110,6 @@ contentDialog.addEventListener('close',()=>document.body.classList.remove('dialo
 
 document.querySelector('#load-map').addEventListener('click',()=>{const frame=document.createElement('iframe');frame.title='Google Maps: Bealab Beauty Studio, Corso Giovanni Agnelli 52/C, Torino';frame.src='https://www.google.com/maps?q=Bealab+Beauty+Studio+Corso+Giovanni+Agnelli+52%2FC+Torino&output=embed';frame.referrerPolicy='no-referrer';frame.allowFullscreen=true;const panel=document.querySelector('#map-panel');panel.classList.add('map-loaded');panel.replaceChildren(frame);const fallback=document.createElement('a');fallback.href=studio.maps;fallback.target='_blank';fallback.rel='noopener noreferrer';fallback.className='map-fallback';fallback.textContent='Mappa non disponibile? Apri le indicazioni su Google';panel.append(fallback);});
 
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:0.08});document.querySelectorAll('.reveal').forEach(el=>{el.classList.add('will-reveal');observer.observe(el);});}
+initMotion();
 const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.desktop-nav a').forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}}),{rootMargin:'-20% 0px -60% 0px'});
 document.querySelectorAll('main section[id]').forEach(s=>sectionObserver.observe(s));
