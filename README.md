@@ -67,7 +67,7 @@ I font Cormorant Garamond e DM Sans sono serviti localmente tramite Fontsource. 
 
 1. Confermare i servizi, gli orari e le informazioni commerciali con il proprietario.
 2. Sostituire le immagini illustrative con foto autorizzate, se disponibili, e aggiornare le relative diciture.
-3. Verificare l’URL della scheda Google ufficiale e inserirlo in `studio.googleReviewsUrl`. Finché manca, il sito mostra correttamente un collegamento di ricerca, senza presentarlo come recensioni verificate. Non sono state inventate testimonianze.
+3. Il collegamento alle recensioni in `studio.googleReviewsUrl` usa la scheda Google Maps verificata confrontando nome, indirizzo e telefono. Le tre testimonianze sono trascritte dagli screenshot forniti dall’utente, con i cognomi abbreviati come richiesto; l’apertura della scheda non sostituisce la conferma del proprietario sui materiali usati.
 4. Completare `studio.legal`, l’informativa privacy e la verifica della mappa con i dati reali del titolare e dell’hosting. L’informativa presente è esplicitamente preliminare. La mappa non comporta richieste a Google prima del clic; la scelta non viene memorizzata.
 5. Impostare `SITE_URL` al dominio HTTPS definitivo e compilare:
 

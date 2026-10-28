@@ -11,8 +11,8 @@ export const studio = {
   postalCode: '10137',
   city: 'Torino',
   maps: 'https://www.google.com/maps/search/?api=1&query=Bealab+Beauty+Studio+Torino',
-  // Inserire un URL della scheda Google ufficiale solo dopo averla verificata.
-  googleReviewsUrl: null,
+  // Scheda Google Maps verificata: Bealab, Corso Giovanni Agnelli 52/c e +39 351 112 8616.
+  googleReviewsUrl: 'https://www.google.com/maps/place/Bealab+-+Beauty+Studio/@45.040123,7.6464334,17z/data=!4m8!3m7!1s0x478813decc410729:0xf3af2fa468d469c9!8m2!3d45.040123!4d7.6464334!9m1!1b1!16s%2Fg%2F11rvdccdp6?hl=it',
   hours: [
     { day: 'Lunedì', time: 'Chiuso' },
     { day: 'Martedì', time: '9:30 – 19:00' },
