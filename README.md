@@ -2,7 +2,13 @@
 
 Sito vetrina dimostrativo in italiano, sviluppato con Vite e JavaScript. Non richiede database, account o chiavi API. Include una sezione dedicata alla squadra, menu mobile, dettagli dei trattamenti, collegamenti WhatsApp e telefono, mappa caricata su richiesta e spazio privacy.
 
-## Un link fisso con aggiornamenti automatici
+## Demo online su Vercel
+
+La demo pubblica è disponibile su **https://bealab-beauty-studio.vercel.app/** e il repository è `siti-web-torino/bealab-beauty-studio`. Vercel è collegato a GitHub: i push su `main` avviano la pubblicazione. Il progetto usa il framework Vite, `npm run build` e la directory di output `dist`; su Vercel il percorso base deve restare `/` (non impostare `VITE_BASE_PATH` al percorso GitHub Pages). Verificare il completamento della pubblicazione prima di condividere una modifica.
+
+La demo resta `noindex,nofollow`. I metadati di condivisione puntano all’indirizzo Vercel; impostando `SITE_URL` al dominio definitivo la build aggiorna URL e sitemap e abilita l’indicizzazione, da fare dopo la conferma dei contenuti e dei dati legali.
+
+## Pubblicazione alternativa su GitHub Pages
 
 È predisposta la pubblicazione tramite GitHub Pages. Il proprietario deve attivarla una sola volta:
 
@@ -10,7 +16,7 @@ Sito vetrina dimostrativo in italiano, sviluppato con Vite e JavaScript. Non ric
 2. In **Build and deployment → Source**, scegliere **GitHub Actions**.
 3. Aprire **Actions → Pubblica demo Bealab**, premere **Run workflow**, scegliere `main` e confermare. Se un’esecuzione è già fallita prima dell’attivazione di Pages, usare **Re-run all jobs** oppure avviare una nuova esecuzione.
 
-Dopo la prima pubblicazione riuscita, GitHub mostra il collegamento nelle impostazioni Pages. L’indirizzo previsto, senza dominio personalizzato, è `https://biscoooo.github.io/bealab-beauty-studio/`. Ogni successivo push su `main` ricompila e pubblica automaticamente il sito: non occorre riscaricare lo ZIP, basta riaprire o aggiornare lo stesso link dopo il completamento dell’azione. Un’eventuale esecuzione fallita va risolta dalla scheda Actions.
+Dopo la prima pubblicazione riuscita, GitHub mostra il collegamento nelle impostazioni Pages. L’indirizzo previsto, senza dominio personalizzato, è `https://siti-web-torino.github.io/bealab-beauty-studio/`. Ogni successivo push su `main` ricompila e pubblica automaticamente il sito: non occorre riscaricare lo ZIP, basta riaprire o aggiornare lo stesso link dopo il completamento dell’azione. Un’eventuale esecuzione fallita va risolta dalla scheda Actions.
 
 La build legge il percorso da GitHub Pages per servire correttamente immagini, font e script anche nella sottocartella del progetto. Questa pubblicazione è una demo pubblicamente accessibile; resta esclusa dall’indicizzazione con `noindex,nofollow`, senza attivare `SITE_URL`. I dati legali e le informazioni commerciali ancora da verificare vanno completati prima di usarla come sito definitivo.
 
@@ -51,8 +57,8 @@ La cartella `dist/` è distribuibile su hosting statico. Non contiene segreti. L
 - `src/main.js`: testi editoriali, struttura e interazioni.
 - `src/motion.js`: ingresso progressivo dei contenuti, indicatore di lettura, lieve movimento delle foto su desktop e apertura animata dei dettagli. Gli effetti rispettano `prefers-reduced-motion`, anche se la preferenza cambia durante la visita; le interazioni legate al puntatore sono limitate ai dispositivi con mouse.
 - `src/style.css`: palette, tipografia, animazioni e responsive.
-- `public/images/`: immagini WebP locali, sostituibili mantenendo gli stessi nomi. I ritratti `team-*.webp` sono adattamenti per il sito delle fotografie della squadra fornite dall’utente. Le altre fotografie sono illustrazioni generate per la demo, non immagini del salone o prove di trattamenti effettivamente eseguiti. Le risorse di lavoro sono conservate fuori dal checkout in `/workspace/generated_images`.
-- `public/images/logo-bealab.webp`: versione adattata per il sito dal logo fornito dall’utente, con sfondo trasparente. Il logo è distinto dalle fotografie dimostrative. La palette del sito riprende rosa peonia, lilla e fucsia dal post ufficiale condiviso dall’utente.
+- `public/images/`: immagini WebP locali, sostituibili mantenendo gli stessi nomi. I ritratti `team-*.webp` sono adattamenti realizzati con uno strumento di editing generativo a partire dalle fotografie fornite in chat: non sono copie identiche dei file originali. Per una presentazione fedele dell’attività, sostituirli con i JPG/PNG originali autorizzati. Le altre fotografie sono illustrazioni generate per la demo, non immagini del salone o prove di trattamenti effettivamente eseguiti. Le risorse di lavoro sono conservate fuori dal checkout in `/workspace/generated_images`.
+- `public/images/logo-bealab.webp`: adattamento con sfondo trasparente del logo fornito, ottenuto con lo stesso strumento generativo; per l’identità ufficiale usare il file originale. La palette del sito riprende rosa peonia, lilla e fucsia dal post ufficiale condiviso dall’utente.
 - `index.html`: metadati SEO e Open Graph.
 
 I font Cormorant Garamond e DM Sans sono serviti localmente tramite Fontsource. Le icone sono Lucide (ISC); i font includono le rispettive licenze SIL OFL nei pacchetti installati. Non sono presenti analytics o pixel pubblicitari.
